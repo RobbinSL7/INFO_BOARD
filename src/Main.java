@@ -5,32 +5,27 @@ public class Main {
     public static void main(String[] args) { // Main
         Scanner scnr = new Scanner(System.in);
 
-        PostServices ps = new PostServices(); // Create Object for PostServices
+        BoardManager bm = new BoardManager(); // Create Object for Board Manager
 
 
-        System.out.println("Enter Title"); // Prompt user for Post Title
+        System.out.println("Enter Announcement Title"); // Prompt user for Announcement Title
 
-          String title = scnr.nextLine(); // Scan Post Title
+          String title = scnr.nextLine(); // Scan Title
 
-        System.out.println("Enter Content"); // Prompt user for Content
+        System.out.println("Enter Details"); // Prompt user for Details
 
-          String content = scnr.nextLine(); // Scan Post Content
+          String content = scnr.nextLine(); // Scan Details
 
         System.out.println("Enter authorID"); // Prompt user for authorID
 
           int authorID = scnr.nextInt(); // Scan authorID
 
+          scnr.nextLine(); // Clears ENTER from the scanner
 
-        Post post = ps.createPost(title, content, authorID); //Create post using Post as holder
+
+        InfoItem item = bm.addAnnouncement(title, content, authorID); //Create post using Post as holder
 
         
-        System.out.println(post.title);   // Print Title Variable
-        System.out.println(post.content);  // Print Content Variable
-        System.out.println(post.authorID);  // Print authorID Variable
-
-
-
-
-
-    }
-}
+        System.out.println(item.title);   // Print Title Variable
+        System.out.println(item.details);  // Print Details Variable
+        System.out.prin
