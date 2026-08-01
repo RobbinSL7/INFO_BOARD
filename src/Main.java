@@ -5,16 +5,14 @@ public class Main {
     public static void main(String[] args) { // Main
         Scanner scnr = new Scanner(System.in);
 
-        BoardManager bm = new BoardManager(); // Create Object for Board Manager
-
 
         System.out.println("Enter Announcement Title"); // Prompt user for Announcement Title
 
-          String title = scnr.nextLine(); // Scan Title
+          String aTitle = scnr.nextLine(); // Scan Title
 
         System.out.println("Enter Details"); // Prompt user for Details
 
-          String content = scnr.nextLine(); // Scan Details
+          String aDetails = scnr.nextLine(); // Scan Details
 
         System.out.println("Enter authorID"); // Prompt user for authorID
 
@@ -22,13 +20,11 @@ public class Main {
 
           scnr.nextLine(); // Clears ENTER from the scanner
 
-
-        InfoItem item = bm.addAnnouncement(title, content, authorID); //Create post using Post as holder
-
+        InfoItem.VarStore(aTitle, aDetails, authorID);
         
-        System.out.println(item.title);   // Print Title Variable
-        System.out.println(item.details);  // Print Details Variable
-        System.out.println(item.authorID);  // Print authorID Variable
+        System.out.println(aTitle);   // Print Title Variable
+        System.out.println(aDetails);  // Print Details Variable
+        System.out.println(authorID);  // Print authorID Variable
 
 
 
